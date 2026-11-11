@@ -18,7 +18,25 @@
   "principal"
   "consejos"
   "pie";
+  grid-template-columns: 1fr;
+
+
+  @media (min-width: $bp-md) {
+    grid-template-areas:
+      "cabecera cabecera"
+      "heroe heroe"
+      "principal consejos"
+      "pie pie";
+    grid-template-columns: 1fr 20rem; 
+  }
+
+  @media (min-width: $bp-lg) {
+    max-width: $bp-lg;
+    margin-inline: auto;
+  }
+
 }
+
 
 .principal {
   padding: clamp(1rem, 0.5rem + 2vw, 2.5rem); // 👀 A4 · relleno fluido (ya resuelto)
