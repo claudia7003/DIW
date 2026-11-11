@@ -8,16 +8,17 @@
 
 .destacados {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem)1fr));
+  gap: $space-md;
+  // @media (max-width: 599px) {
+  //   grid-template-columns: 1fr;
+  // }
 
-  @media (max-width: 599px) {
-    grid-template-columns: 1fr;
-  }
+  // @include desde($bp-md) {
+  //   grid-template-columns: 1fr 1fr;
+  // }
 
-  @include desde($bp-md) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @include desde($bp-lg) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  // @include desde($bp-lg) {
+  //   grid-template-columns: 1fr 1fr 1fr;
+  // }
 }
