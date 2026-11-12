@@ -10,7 +10,7 @@
 
 .hueco-ficha {
   margin-bottom: $space-xl;
-  container-type: inline-size; //Habilita el contenedor para consultar tamaño
+  container-type: inline-size;
 }
 
 .ficha {
@@ -20,13 +20,14 @@
   overflow: hidden;
   border-radius: $radius-md;
   background: var(--color-superficie);
-
-  // Cuando el contenedor padre (.hueco-ficha) supera un ancho determinado, pasa a dos columnas
-  @container (min-width: 28rem) {
-    flex-direction: row; 
-    align-items: center;
 }
 
+@container (min-width: 28rem) {
+  .ficha {
+    flex-direction: row;
+    align-items: center;
+  }
+}
 
 .ficha__cuerpo {
   padding: $space-md;
@@ -40,6 +41,4 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-marca);
-}
-
 }
