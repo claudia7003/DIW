@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contacto · RAÍZ</title>
+    <link rel="stylesheet" href="/src/tailwind.css" />
+  </head>
+  <body>
+    <!-- ✍️ B3 · Esta página va SOLO con Tailwind (src/tailwind.css), sin SASS. Ponle las clases de utilidad:
+         los colores de RAÍZ (del @theme), dos columnas desde md y un botón con hover: y focus-visible:.
+         Nada de valores sueltos entre corchetes ni style="". -->
+    <header
+      class="bg-marca-suave border-b border-marca/20 px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4"
+    >
+      <a href="/" class="text-xl font-bold text-marca">RAÍZ</a>
+      <nav aria-label="Principal" class="flex gap-4 font-medium">
+        <a href="/" class="hover:text-marca transition-colors">Inicio</a>
+        <a href="/producto.html" class="hover:text-marca transition-colors">Monstera</a>
+        <a href="/contacto.html" aria-current="page" class="text-marca underline underline-offset-4">Contacto</a>
+      </nav>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-10 w-full flex-grow">
+      <h1 class="text-3xl font-bold text-marca mb-8">Contacto</h1>
+
+      <!-- Dos columnas desde md: -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <!-- Información del vivero -->
+        <section
+          aria-label="Dónde estamos"
+          class="bg-white p-6 rounded-lg shadow-sm border border-tierra/20 flex flex-col gap-4"
+        >
+          <h2 class="text-xl font-semibold text-marca-oscuro">El vivero</h2>
+          <p class="text-texto/80 leading-relaxed">
+            Abrimos de lunes a sábado, de 9:00 a 14:00. Si vienes en persona, te ayudamos a elegir.
+          </p>
+          <p class="font-semibold text-tierra bg-marca-suave p-3 rounded">Envíos gratis desde 40 €</p>
+        </section>
+
+        <!-- Formulario -->
+        <form action="#" class="bg-white p-6 rounded-lg shadow-sm border border-tierra/20 flex flex-col gap-4">
+          <label for="nombre" class="flex flex-col gap-1 font-medium text-sm">
+            Nombre
+            <input
+              id="nombre"
+              name="nombre"
+              autocomplete="name"
+              required
+              class="border border-tierra/30 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-marca"
+            />
+          </label>
+
+          <label for="correo" class="flex flex-col gap-1 font-medium text-sm">
+            Correo
+            <input
+              id="correo"
+              name="correo"
+              type="email"
+              autocomplete="email"
+              required
+              class="border border-tierra/30 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-marca"
+            />
+          </label>
+
+          <label for="mensaje" class="flex flex-col gap-1 font-medium text-sm">
+            ¿En qué te ayudamos?
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="4"
+              required
+              class="border border-tierra/30 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-marca resize-y"
+            ></textarea>
+          </label>
+
+          <button
+            type="submit"
+            class="bg-marca text-white font-medium py-2.5 px-4 rounded transition-colors hover:bg-marca-oscuro focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-marca cursor-pointer mt-2"
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="bg-marca-suave border-t border-marca/20 text-center py-6 text-sm text-tierra">
+      RAÍZ, vivero online · Cádiz
+    </footer>
+  </body>
+</html>

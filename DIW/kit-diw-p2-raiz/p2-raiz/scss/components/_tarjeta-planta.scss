@@ -1,0 +1,84 @@
+// _tarjeta-planta.scss — ✍️ B1 · la tarjeta de una planta en BEM
+// Mira _boton.scss (👀): así es un bloque BEM con sus modificadores.
+// ✍️ B1. Primero las clases en index.html (las 6 <article> de .destacados), después su estilo aquí:
+//    - el bloque .tarjeta-planta y sus elementos (__imagen, __nombre, __descripcion, __precio, __boton, __etiqueta);
+//    - los modificadores --oferta (que se note) y --agotada (la imagen en gris);
+//    - especificidad plana: una clase por selector (o .tarjeta-planta--mod .tarjeta-planta__elem). Sin etiquetas ni ids.
+@use "../tokens" as *;
+
+.tarjeta-planta {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--color-superficie);
+  border: 1px solid $gray-100;
+  border-radius: $radius-md;
+  padding: $space-md;
+  gap: 0.75rem;
+}
+
+.tarjeta-planta__imagen {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: $space-xs;
+}
+
+.tarjeta-planta__nombre {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.tarjeta-planta__descripcion {
+  margin: 0;
+  font-size: 0.875rem;
+  color: $color-muted;
+}
+
+.tarjeta-planta__precio {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.tarjeta-planta__etiqueta {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: var(--color-marca);
+  color: var(--color-sobre-marca);
+  border-radius: $space-xs;
+}
+
+.tarjeta-planta__boton {
+  margin-top: auto;
+  width: 100%;
+}
+
+.tarjeta-planta--oferta {
+  border-color: $color-brand-primary;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%);
+}
+
+.tarjeta-planta--oferta .tarjeta-planta__etiqueta {
+  background-color: $color-brand-primary;
+}
+
+.tarjeta-planta--agotada {
+  opacity: 0.75;
+}
+
+.tarjeta-planta--agotada .tarjeta-planta__imagen {
+  filter: grayscale(100%);
+}
+
+.tarjeta-planta--agotada .tarjeta-planta__boton {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6;
+}
