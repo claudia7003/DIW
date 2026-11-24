@@ -6,6 +6,15 @@
 //    - especificidad plana: una clase por selector (o .tarjeta-planta--mod .tarjeta-planta__elem). Sin etiquetas ni ids.
 @use "../tokens" as *;
 
+//Añadido 
+:root { --bg: #f6f4ef; --texto: #1a1a1a; }
+@media (prefers-color-scheme: dark) {
+:root { --bg: #0b1f0d;; --texto: #f0f0f0; }
+}
+
+
+body { background: var(--bg); color: var(--texto); }
+
 .tarjeta-planta {
   display: flex;
   flex-direction: column;
@@ -33,7 +42,7 @@
 .tarjeta-planta__descripcion {
   margin: 0;
   font-size: 0.875rem;
-  color: $color-muted;
+  color: --color-muted;
 }
 
 .tarjeta-planta__precio {
@@ -62,7 +71,7 @@
 
 .tarjeta-planta--oferta {
   border-color: $color-brand-primary;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%);
+  box-shadow: 0 4px 6px -1px var(--color-brand-strong);
 }
 
 .tarjeta-planta--oferta .tarjeta-planta__etiqueta {
@@ -82,3 +91,12 @@
   pointer-events: none;
   opacity: 0.6;
 }
+
+
+//En el tema oscuro, tu tarjeta de oferta no se distingue y el borde y el texto ssecunadrio de las tarjetas no cambian
+//Cambios realizados:
+//.tarjeta-planta--oferta {
+//   border-color: $color-brand-primary;
+//   box-shadow: 0 4px 6px -1px var(--color-brand-strong);
+// }
+//Utilizacion de tokens guardados
